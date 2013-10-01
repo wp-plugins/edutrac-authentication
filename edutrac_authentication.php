@@ -3,7 +3,7 @@
 Plugin Name: eduTrac Authentication
 Plugin URI: http://www.7mediaws.org/extend/plugins/edutrac-authentication/
 Description: This plugin bypasses the native WordPress register, login, and password retrieval system and is replaced by the eduTrac RESTful API for authenticating users.
-Version: 1.0.1
+Version: 1.0.2
 Author: Joshua Parker
 Author URI: http://www.7mediaws.org/
 */
@@ -211,6 +211,10 @@ function disable_function() {
     <?php
     exit();
 }
+
+// i18n
+$plugin_dir = basename(dirname(__FILE__)). '/languages';
+load_plugin_textdomain( 'edutrac-authentication', WP_PLUGIN_DIR.'/'.$plugin_dir, $plugin_dir );
 
 
 add_action('admin_init', 'et_auth_init' );

@@ -4,7 +4,7 @@ Donate link: none
 Tags: authentication, login, eduTrac, RESTful, REST API, API, SIS
 Requires at least: 3.6
 Tested up to: 3.6.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,10 @@ user details will might be blank. User details are ported from eduTrac to WordPr
 * Enter your eduTrac install settings in Settings -> eduTrac API settings
 
 == Frequently Asked Questions ==
+
+= Where do I go to get an authenication token? =
+
+You can visit the eduTrac <a href="http://community.7mediaws.org/projects/edutrac/wiki/RESTful_API">community site</a> for instructions on retrieving an authentication token.
 
 = My administrator account for WordPress doesn't work anymore! =
 
@@ -52,6 +56,11 @@ FTP into your server, navigate to the plugins folder and rename the plugin; if i
 4. Example "Lost my password" retrieval attempt
 
 == Changelog ==
+
+= 1.0.2 (2013.10.01) =
+
+* Added instructions on where to go to get an authentication token.
+* Added internationalization
 
 = 1.0.1 (2013.09.12) =
 
