@@ -4,16 +4,18 @@ Donate link: none
 Tags: authentication, login, eduTrac, RESTful, REST API, API, SIS
 Requires at least: 3.6
 Tested up to: 3.6.1
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 A plugin that can be used to tap into an eduTrac install's RESTful API for authentication into a WordPress powered site.
 
+<strong>Note: </strong> Before upgrading to the new version of this plugin, you must be using eduTrac SIS 5.x.
+
 == Description ==
 
-<a href="http://www.7mediaws.org/">eduTrac</a> is an open source student information system (SIS) that can be used by secondary and post-secondary educational institutions to help manage 
-faculty, staff, students, courses, course registration, NSLC transmissions, and more. If you are using a WordPress site along with an eduTrac install, you can use this plugin to bypass the WordPress registration by 
+<a href="http://www.7mediaws.org/">eduTrac  SIS</a> is an open source student information system (SIS) that can be used by secondary and post-secondary educational institutions to help manage 
+faculty, staff, students, courses, course registration, and more. If you are using a WordPress site along with an eduTrac install, you can use this plugin to bypass the WordPress registration by 
 using the eduTrac RESTful API.
 
 If the user exists in eduTrac but does not exist in WordPress, the user will be created. Also, if users already exist in WordPress, they will still be able to login, but their 
@@ -30,7 +32,7 @@ user details will might be blank. User details are ported from eduTrac to WordPr
 
 = Where do I go to get an authenication token? =
 
-You can visit the eduTrac <a href="http://community.7mediaws.org/projects/edutrac/wiki/RESTful_API">community site</a> for instructions on retrieving an authentication token.
+<a href="http://www.edutracerp.com/auth-token/1.1/">Click here</a> to generate an api key.
 
 = My administrator account for WordPress doesn't work anymore! =
 
@@ -56,6 +58,10 @@ FTP into your server, navigate to the plugins folder and rename the plugin; if i
 4. Example "Lost my password" retrieval attempt
 
 == Changelog ==
+
+= 1.0.3 (2015.05.08) =
+
+* Updated endpoints
 
 = 1.0.2 (2013.10.01) =
 

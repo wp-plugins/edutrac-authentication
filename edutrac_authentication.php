@@ -3,7 +3,7 @@
 Plugin Name: eduTrac Authentication
 Plugin URI: http://www.7mediaws.org/extend/plugins/edutrac-authentication/
 Description: This plugin bypasses the native WordPress register, login, and password retrieval system and is replaced by the eduTrac RESTful API for authenticating users.
-Version: 1.0.2
+Version: 1.0.3
 Author: Joshua Parker
 Author URI: http://www.7mediaws.org/
 */
@@ -104,21 +104,14 @@ function et_auth_check_login($username,$password) {
     require_once('./wp-includes/pluggable.php');
     require_once('./wp-includes/class-phpass.php');
     
-    $enc = rand(22,999999*1000000);
-    $salt = substr(hash('sha512',$enc),0,22);
-    
     if($username !== null) {
-        $url = file_get_contents(get_option('et_url')."api/erp/person/uname/".$username.".json?auth_token=".get_option('et_auth_token'));
+        $url = file_get_contents(get_option('et_url')."api/person/uname/".$username."/?key=".get_option('et_auth_token'));
         $json = json_decode($url, true);
-    
+        $array = [];
         foreach ($json as $k => $v) {
             $array[] = $v;
         }
     }
-    
-    $cookie = sprintf("data=%s&auth=%s", urlencode($username), urlencode(et_hash_password($username.$password)));
-    $mac = hash_hmac("sha512", $cookie, $enc);
-    $auth = $cookie . '&digest=' . urlencode($mac);
         
     if ($v['uname'] == $username) {    //create/update wp account from external database if login/pw exact match exists in that db      
                                     
